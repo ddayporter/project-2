@@ -22,13 +22,15 @@
   <% @questions.each do |question| %>
     <tr>
       <div class="QandA">
-      <td><%= question.body %></td>
-      <td><%= question.color %></td>
-      <td><%= link_to 'Show', question_path(question) %></td>
-      <td><%= link_to 'Edit', edit_question_path(question) %></td>
-      <td><%= link_to 'BALEETED', question_path(question),
-              method: :delete,
-              data: { confirm: 'Feeling anti-chromatic?' } %> </td>
+        <!-- probably should indent these tds -->
+        <td><%= question.body %></td>
+        <td><%= question.color %></td>
+        <td><%= link_to 'Show', question_path(question) %></td>
+        <td><%= link_to 'Edit', edit_question_path(question) %></td>
+        <!-- LOL yasss strongbad reference! -->
+        <td><%= link_to 'BALEETED', question_path(question),
+                method: :delete,
+                data: { confirm: 'Feeling anti-chromatic?' } %> </td>
       </div>
     </tr>
   <% end %>

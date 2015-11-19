@@ -1,4 +1,6 @@
 class AnswersController < ApplicationController
+# you could do the before_action :set_answer thing here to DRY it up?
+
   def set_answer
     @answer = Answer.new
   end
@@ -7,7 +9,7 @@ class AnswersController < ApplicationController
       @question = Question.find(params[:question_id])
       @answer = @question.answers.create(answer_params)
       redirect_to question_path(@question)
-    end
+  end
 
   def edit
     @answer = Answer.find(params[:id])
@@ -33,4 +35,4 @@ class AnswersController < ApplicationController
       def answer_params
         params.require(:answer).permit(:text)
       end
-  end
+end
